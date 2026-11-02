@@ -1,0 +1,20 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="176" height="176" viewBox="0 0 176 176" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="&#224;&#185;&#129;&#224;&#184;&#170;&#224;&#184;&#135;&#224;&#185;&#128;&#224;&#184;&#135;&#224;&#184;&#178;&#224;&#184;&#151;&#224;&#184;&#163;&#224;&#184;&#135;&#224;&#184;&#129;&#224;&#184;&#165;&#224;&#184;&#161; &#194;&#183; &#224;&#184;&#132;&#224;&#184;&#135;&#224;&#184;&#151;&#224;&#184;&#181;&#224;&#185;&#136;">
+<circle cx="88" cy="88" r="88" fill="url(#paint0_radial_0_4)"/>
+<circle cx="88" cy="88" r="88" fill="url(#paint1_linear_0_4)"/>
+</g>
+<defs>
+<radialGradient id="paint0_radial_0_4" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(88 88) scale(88)">
+<stop stop-color="#1F1A0A" stop-opacity="0"/>
+<stop offset="0.6" stop-color="#1F1A0A" stop-opacity="0.04"/>
+<stop offset="0.85" stop-color="#1F1A0A" stop-opacity="0.26"/>
+<stop offset="1" stop-color="#171408" stop-opacity="0.65"/>
+</radialGradient>
+<linearGradient id="paint1_linear_0_4" x1="-10.2892" y1="58.4862" x2="173.834" y2="123.471" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFFAD4" stop-opacity="0.35"/>
+<stop offset="0.35" stop-color="#FFFAD4" stop-opacity="0.07"/>
+<stop offset="0.64" stop-color="#1C1709" stop-opacity="0.1"/>
+<stop offset="1" stop-color="#141206" stop-opacity="0.78"/>
+</linearGradient>
+</defs>
+</svg>
