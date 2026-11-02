@@ -17,5 +17,6 @@ if (artwork.length !== 59820199 || digest !== 'b0c29de1b31bc032785ac2ea8e2562cb8
   throw new Error('Nakhon Phanom artwork is incomplete or changed. Verify all eight source parts.');
 }
 await mkdir(output, { recursive: true });
-await writeFile(new URL('project.svg', output), addNakhonMotion(artwork));
-console.log(`Verified Nakhon Phanom artwork (${artwork.length} bytes); added eight looping Figma tracks. Website: dist/`);
+const reveals = JSON.parse(await readFile(new URL('./nakhon-reveals.json', import.meta.url), 'utf8'));
+await writeFile(new URL('project.svg', output), addNakhonMotion(artwork, reveals));
+console.log(`Verified Nakhon Phanom artwork (${artwork.length} bytes); added ${reveals.length} reveal groups and eight looping Figma tracks. Website: dist/`);

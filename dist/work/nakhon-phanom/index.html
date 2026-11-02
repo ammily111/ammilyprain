@@ -21,7 +21,14 @@
     nav { height: 90px; display: flex; justify-content: space-evenly; align-items: center; max-width: 1000px; margin: auto; font: 21px Georgia, serif; }
     nav a { padding: 15px 10px; }
     .project-artwork { margin: 0; }
+    .project-artwork object { display: block; width: 100%; height: auto; aspect-ratio: 1595 / 19764; pointer-events: none; }
     .project-artwork img { display: block; width: 100%; height: auto; }
+    @keyframes enter-page { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    @media (prefers-reduced-motion: no-preference) {
+      nav { animation: enter-page .8s cubic-bezier(.22,1,.36,1) both; }
+      .back[data-reveal] { transition: opacity .9s cubic-bezier(.22,1,.36,1), translate .9s cubic-bezier(.22,1,.36,1); }
+      .back.awaiting-reveal { opacity: 0; translate: 0 28px; }
+    }
     .index-link { position: fixed; bottom: 24px; left: 24px; z-index: 5; padding: 12px 18px; border: 1px solid #6a291830; border-radius: 30px; background: #fffffff2; box-shadow: 0 2px 15px #0001; font-size: 13px; }
     .back { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 22px; padding: 40px 6% 95px; font-size: 14px; }
     .back a, .back button { padding: 10px 0; }
@@ -65,7 +72,9 @@
       <p>This project was developed for the Chongchang 11th competition and remains a conceptual design proposal. It has not been implemented in the real world.</p>
     </div>
     <figure class="project-artwork">
-      <img src="/assets/nakhon-phanom/project.svg?motion=loop-v1" width="1595" height="19764" fetchpriority="high" alt="Feel…Nakhon Phanom project presentation: research, campaign strategy, Thai lettering, five-color palette, local graphic motifs, social media, souvenirs, LOMCHOY tourism hub and fragrance packaging. A conceptual design by Ammily Prain.">
+      <object id="project-svg" type="image/svg+xml" data="/assets/nakhon-phanom/project.svg?motion=scroll-v2" width="1595" height="19764" role="img" aria-label="Feel…Nakhon Phanom project presentation: research, campaign strategy, visual identity, campaign media, LOMCHOY tourism hub and packaging. A conceptual design by Ammily Prain.">
+        <img src="/assets/nakhon-phanom/project.svg?motion=scroll-v2" width="1595" height="19764" alt="Feel…Nakhon Phanom project presentation by Ammily Prain.">
+      </object>
     </figure>
   </main>
   <footer class="back">
@@ -78,6 +87,68 @@
     document.getElementById('back-to-top').addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
     });
+    (() => {
+      const artwork = document.getElementById('project-svg');
+      const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+      function initialiseArtwork() {
+        const doc = artwork.contentDocument;
+        const root = doc?.documentElement;
+        if (!root || root.localName !== 'svg' || root.hasAttribute('data-scroll-ready')) return;
+        root.setAttribute('width', '100%');
+        root.setAttribute('height', '100%');
+        root.setAttribute('data-scroll-ready', '');
+        const groups = [...doc.querySelectorAll('[data-reveal-y]')];
+        if (reduced.matches || !groups.length) return;
+        const style = doc.createElementNS('http://www.w3.org/2000/svg', 'style');
+        style.textContent = '.scroll-reveal{transition:opacity .9s cubic-bezier(.22,1,.36,1),translate .9s cubic-bezier(.22,1,.36,1);transition-delay:var(--reveal-delay,0ms)}.scroll-reveal.awaiting-reveal{opacity:0;translate:0 28px}@media(prefers-reduced-motion:reduce){.scroll-reveal{opacity:1!important;translate:none!important;transition:none!important}}';
+        root.append(style);
+        const pending = groups.map(element => {
+          const box = element.getBBox();
+          if (box.width < 650) element.style.setProperty('--reveal-delay', `${Math.min(220, Math.floor(Math.max(0, box.x) / 550) * 110)}ms`);
+          element.classList.add('scroll-reveal', 'awaiting-reveal');
+          return { element, y: Number(element.getAttribute('data-reveal-y')) };
+        }).sort((a, b) => a.y - b.y);
+        let next = 0;
+        let frame = 0;
+        function revealVisible() {
+          frame = 0;
+          const rect = artwork.getBoundingClientRect();
+          const limit = (innerHeight - 25 - rect.top) / (rect.width / 1595);
+          while (next < pending.length && pending[next].y <= limit) pending[next++].element.classList.remove('awaiting-reveal');
+          if (next === pending.length) {
+            removeEventListener('scroll', schedule);
+            removeEventListener('resize', schedule);
+          }
+        }
+        function schedule() { if (!frame) frame = requestAnimationFrame(revealVisible); }
+        addEventListener('scroll', schedule, { passive: true });
+        addEventListener('resize', schedule, { passive: true });
+        reduced.addEventListener('change', event => {
+          if (!event.matches) return;
+          if (frame) cancelAnimationFrame(frame);
+          groups.forEach(element => element.classList.remove('awaiting-reveal'));
+          removeEventListener('scroll', schedule);
+          removeEventListener('resize', schedule);
+        });
+        schedule();
+      }
+      artwork.addEventListener('load', initialiseArtwork);
+      if (artwork.contentDocument?.readyState === 'complete') initialiseArtwork();
+      if (reduced.matches || !('IntersectionObserver' in window)) return;
+      const footer = document.querySelector('.back');
+      footer.setAttribute('data-reveal', '');
+      footer.classList.add('awaiting-reveal');
+      const observer = new IntersectionObserver(entries => {
+        if (entries.some(entry => entry.isIntersecting)) {
+          footer.classList.remove('awaiting-reveal');
+          observer.disconnect();
+        }
+      }, { threshold: .05, rootMargin: '0px 0px -25px 0px' });
+      observer.observe(footer);
+      reduced.addEventListener('change', event => {
+        if (event.matches) { footer.classList.remove('awaiting-reveal'); observer.disconnect(); }
+      });
+    })();
   </script>
 </body>
 </html>

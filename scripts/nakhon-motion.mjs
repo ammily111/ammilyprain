@@ -12,7 +12,7 @@ const tracks = [
   { id: '4504', first: 1794, last: 1803, start: 88.457, end: 98.987 },
 ];
 
-export function addNakhonMotion(artwork) {
+export function addNakhonMotion(artwork, reveals = []) {
   const svg = artwork.toString('utf8');
   const elements = [];
   let depth = 0;
@@ -41,16 +41,23 @@ export function addNakhonMotion(artwork) {
   if (elements.length !== 1803) throw new Error('Unexpected SVG layer structure; recheck the motion mapping.');
 
   const changes = [];
+  for (const reveal of reveals) {
+    if (!elements[reveal.first - 1] || !elements[reveal.last - 1] || reveal.last < reveal.first) {
+      throw new Error('Invalid Nakhon Phanom scroll-reveal mapping.');
+    }
+    changes.push({ at: elements[reveal.first - 1].start, order: 0, text: `<g data-reveal-y="${reveal.top}">` });
+    changes.push({ at: elements[reveal.last - 1].end, order: 20, text: '</g>' });
+  }
   let css = '';
   for (const track of tracks) {
-    changes.push({ at: elements[track.first - 1].start, text: `<g data-motion="${track.id}" data-node-id="2239:${track.id}">` });
-    changes.push({ at: elements[track.last - 1].end, text: '</g>' });
+    changes.push({ at: elements[track.first - 1].start, order: 10, text: `<g data-motion="${track.id}" data-node-id="2239:${track.id}">` });
+    changes.push({ at: elements[track.last - 1].end, order: 10, text: '</g>' });
     css += `[data-motion="${track.id}"]{animation:reveal-${track.id} 4.748088s linear infinite}`;
     css += `@keyframes reveal-${track.id}{0%{opacity:0}${track.start}%{opacity:0;animation-timing-function:ease-in-out}${track.end}%,100%{opacity:1}}`;
   }
   css += '@media(prefers-reduced-motion:reduce){[data-motion]{animation:none!important;opacity:1!important}}';
   changes.push({ at: svg.indexOf('>') + 1, text: `<style>${css}</style>` });
-  changes.sort((a, b) => a.at - b.at);
+  changes.sort((a, b) => a.at - b.at || (a.order || 0) - (b.order || 0));
   let result = '';
   let cursor = 0;
   for (const change of changes) {
