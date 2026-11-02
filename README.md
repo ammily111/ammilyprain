@@ -2,20 +2,25 @@
 
 Personal graphic design portfolio built from the Portfolio 2026 Figma designs.
 
-Live site: https://ammily-portfolio-2026.socialgoose1.chatgpt.site
+Live site: https://www.ammilyprain.com
 
 ## Files
 
 - `dist/index.html`: Work Index, category filters, newest-first ordering and formatted captions.
 - `dist/work/silpacheep/index.html`: Silpacheep project page.
+- `dist/work/nakhon-phanom/index.html`: Feel…Nakhon Phanom project page, linked from its Work Index cover.
+- `source-assets/nakhon-phanom/`: Eight ordered parts of the supplied original SVG.
+- `scripts/build.mjs`: Reassembles the original SVG and verifies its size and SHA-256 before publishing.
+- `vercel.json`: Builds and publishes `dist` through the existing GitHub → Vercel connection.
 - `dist/assets/`: Project artwork, the four animated states for 13 (un) BELIEF, and fonts.
 - `.openai/hosting.json`: Existing Sites deployment configuration.
 
 ## Run locally
 
-No dependency installation or build step is needed. Serve `dist` as the website root:
+No dependency installation is needed. Assemble the Nakhon Phanom artwork, then serve `dist` as the website root:
 
 ```sh
+node scripts/build.mjs
 python3 -m http.server 8000 --directory dist
 ```
 
@@ -35,4 +40,8 @@ Spreadsheet edits are not synchronized automatically. Current content is stored 
 
 ## Deploy
 
-Use any static hosting service with `dist` as the published directory. The existing Sites configuration is retained for the current site.
+The existing Vercel project `ammilyprain` publishes the GitHub `main` branch to www.ammilyprain.com. `vercel.json` runs the dependency-free build and publishes `dist`.
+
+The Nakhon Phanom page displays the supplied SVG without changing its artwork. It is a static presentation; Figma timeline animations and subsequent Figma edits are not synchronized automatically. The SVG is 59.8 MB before HTTP compression. Keep all eight source parts together; do not edit them independently. The build verifies that the reconstructed file matches the original exactly. The generated `dist/assets/nakhon-phanom/project.svg` is intentionally excluded from Git.
+
+The older Sites configuration remains in `.openai/hosting.json` for reference.
