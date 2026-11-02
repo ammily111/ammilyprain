@@ -8,6 +8,7 @@ Live site: https://www.ammilyprain.com
 
 - `dist/index.html`: Work Index, category filters, newest-first ordering and formatted captions.
 - `dist/work/silpacheep/index.html`: Silpacheep project page.
+- `dist/work/nowhere-now-here/index.html`: NO–WHERE, NOW–HERE concert project, from Figma frame `2023:7033`, with responsive white margins and scroll reveals.
 - `dist/work/nakhon-phanom/index.html`: Feel…Nakhon Phanom project page, linked from its Work Index cover.
 - `source-assets/nakhon-phanom/`: Eight ordered parts of the supplied original SVG.
 - `scripts/build.mjs`: Reassembles the original SVG and verifies its size and SHA-256 before publishing.
