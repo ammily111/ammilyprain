@@ -10,7 +10,7 @@
 @media(max-width:600px){nav{height:74px;font-size:17px}.hero{height:calc(760px * var(--mobile-scale,1))}.stage{width:960px;transform:translateX(-50%) scale(var(--mobile-scale,1))}.stage .assembly{left:360px}.controls{grid-template-columns:1fr auto;gap:12px 16px;padding:14px 16px 0}.controls .hint{grid-column:1/-1}.range input{width:min(150px,38vw)}.collage{margin-top:40px}.work-link{margin:55px auto 80px}.footer-line{font-size:10px;flex-direction:column;gap:12px}footer{margin-bottom:40px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.assembly,.assembly.settle,.hinge{transition:none}}
 </style>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..700&display=swap"><style id="ap-header-css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..700;1,62..125,300..700&family=IBM+Plex+Sans+Thai:wght@400;500&display=swap"><style id="ap-header-css">
 .ap-hd{position:fixed;inset:0 0 auto;height:48px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 20px;z-index:1000;mix-blend-mode:difference;color:#fff;font-family:"Archivo",Helvetica,Arial,sans-serif;font-variation-settings:"wdth" 100;font-size:11px;line-height:16px;letter-spacing:.45px;font-style:normal;pointer-events:none}
 .ap-hd a{color:#fff!important;text-decoration:none!important;pointer-events:auto;font:inherit;letter-spacing:inherit}
 .ap-hd .ap-brand{font-weight:500;letter-spacing:.1px}
@@ -27,6 +27,11 @@
 .ap-old{visibility:hidden}
 @media(max-width:700px){.ap-hd{padding:0 12px;grid-template-columns:auto 1fr auto;gap:10px}.ap-hd .ap-links{gap:12px;justify-content:center}}
 @media(max-width:420px){.ap-hd .bkk{display:none}}
+</style><style id="ap-type">
+/* One typeface across the site: Archivo (Latin) + IBM Plex Sans Thai, matching the home page. */
+body,body *:not(svg):not(svg *){font-family:"Archivo","IBM Plex Sans Thai",Helvetica,Arial,sans-serif!important;font-synthesis:none}
+body{font-variation-settings:"wdth" 100}
+h1,h2,h3,.detail-title,.work-link{font-variation-settings:"wdth" 82;font-weight:400}
 </style></head>
 <body><div class="ap-hd" role="banner"><a class="ap-brand" href="/">Ammily Prain</a><div class="ap-links" role="navigation" aria-label="Main navigation"><a href="/index/">Index</a><a href="/#info">About</a><a href="/playground/" aria-current="page">Playground</a></div><a class="ap-clock" href="mailto:ammilyprain@gmail.com" aria-label="Contact me (ammilyprain@gmail.com)"><span class="ck-a"><span class="bkk">Bangkok </span><b class="ap-clk">--:--</b></span><span class="ck-b">Contact me</span></a></div>
 <nav aria-label="Old navigation" aria-hidden="true" class="ap-old"><a tabindex="-1" href="/playground/" aria-current="page">home</a><a tabindex="-1" href="/index/">work</a><a tabindex="-1" href="#about">info</a><a tabindex="-1" href="#contact">contact</a></nav>
