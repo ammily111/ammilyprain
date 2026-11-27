@@ -142,7 +142,7 @@ footer{background:var(--dark);color:#fff;padding:90px 20px 26px;position:relativ
 <header>
   <a href="#top" class="t11 brand fade">Ammily Prain</a>
   <nav class="t11 fade" style="animation-delay:.1s">
-    <a href="/index/">Index</a><a href="#info">About</a><a href="/playground/">Playground</a>
+    <a href="#info">About</a><a href="/index/">Index</a><a href="/playground/">Playground</a>
   </nav>
   <a class="t11 r fade clock" style="animation-delay:.2s" href="mailto:ammilyprain@gmail.com" aria-label="Contact me (ammilyprain@gmail.com)"><span class="ck-a"><span class="bkk">Bangkok </span><b id="clk">--:--</b></span><span class="ck-b">Contact me</span></a>
 </header>
@@ -340,7 +340,7 @@ function frame(){
   /* nav state */
   const navs=document.querySelectorAll('header nav a');
   const ir=$('#info').getBoundingClientRect();
-  const sec=(ir.top<vh*.5&&ir.bottom>vh*.5)?1:-1;
+  const sec=(ir.top<vh*.5&&ir.bottom>vh*.5)?0:-1;
   navs.forEach((a,i)=>a.classList.toggle('on',i===sec));
   requestAnimationFrame(frame);
 }
