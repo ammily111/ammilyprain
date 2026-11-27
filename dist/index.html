@@ -30,7 +30,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;paddin
 .t22{font-size:22px;line-height:27px}
 .t40{font-size:40px;line-height:48px;font-weight:400;letter-spacing:-.2px}
 /* header */
-header{position:fixed;inset:0 0 auto;height:48px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 20px;z-index:50;mix-blend-mode:difference;color:#fff}
+header{position:fixed;inset:0 0 auto;height:48px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 20px;z-index:50;color:#fff;transition:background-color .35s,color .35s,box-shadow .35s}
+header.solid{background:#fff;color:#111;box-shadow:0 1px 0 rgba(0,0,0,.07)}
 header nav{display:flex;gap:44px}
 header nav a{opacity:.55;transition:opacity .3s}header nav a:hover,header nav a.on{opacity:1}
 header .r{justify-self:end}
@@ -346,6 +347,7 @@ function frame(){
   requestAnimationFrame(frame);
 }
 requestAnimationFrame(frame);
+const hdr=document.querySelector('header');const hu=()=>hdr.classList.toggle('solid',scrollY>Math.max(120,innerHeight*.7));addEventListener('scroll',hu,{passive:true});hu();
 }
 </script>
 </body>

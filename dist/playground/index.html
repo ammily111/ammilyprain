@@ -11,8 +11,8 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.assembly,.assembly.settle,.hinge{transition:none}}
 </style>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..700;1,62..125,300..700&family=IBM+Plex+Sans+Thai:wght@400;500&display=swap"><style id="ap-header-css">
-.ap-hd{position:fixed;inset:0 0 auto;height:48px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 20px;z-index:1000;mix-blend-mode:difference;color:#fff;font-family:"Archivo",Helvetica,Arial,sans-serif;font-variation-settings:"wdth" 100;font-size:11px;line-height:16px;letter-spacing:.45px;font-style:normal;pointer-events:none}
-.ap-hd a{color:#fff!important;text-decoration:none!important;pointer-events:auto;font:inherit;letter-spacing:inherit}
+.ap-hd{position:fixed;inset:0 0 auto;height:48px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 20px;z-index:1000;color:#111;background:transparent;transition:background-color .35s,color .35s,box-shadow .35s;font-family:"Archivo",Helvetica,Arial,sans-serif;font-variation-settings:"wdth" 100;font-size:11px;line-height:16px;letter-spacing:.45px;font-style:normal;pointer-events:none}
+.ap-hd a{color:inherit!important;text-decoration:none!important;pointer-events:auto;font:inherit;letter-spacing:inherit}
 .ap-hd .ap-brand{font-weight:500;letter-spacing:.1px}
 .ap-hd .ap-links{display:flex;gap:44px}
 .ap-hd .ap-links a{opacity:.55;transition:opacity .3s}
@@ -23,7 +23,9 @@
 .ap-hd .ap-clock .ck-b{opacity:0;transform:translateY(6px)}
 .ap-hd .ap-clock:hover .ck-a,.ap-hd .ap-clock:focus-visible .ck-a{opacity:0;transform:translateY(-6px)}
 .ap-hd .ap-clock:hover .ck-b,.ap-hd .ap-clock:focus-visible .ck-b{opacity:1;transform:none}
-.ap-hd a:focus-visible{outline:1px solid #fff;outline-offset:4px}
+.ap-hd a:focus-visible{outline:1px solid currentColor;outline-offset:4px}
+.ap-hd.on-dark{color:#fff}
+.ap-hd.solid{background:#fff;color:#111;box-shadow:0 1px 0 rgba(0,0,0,.07)}
 .ap-old{visibility:hidden}
 @media(max-width:700px){.ap-hd{padding:0 12px;grid-template-columns:auto 1fr auto;gap:10px}.ap-hd .ap-links{gap:12px;justify-content:center}}
 @media(max-width:420px){.ap-hd .bkk{display:none}}
@@ -33,7 +35,7 @@ body,body *:not(svg):not(svg *){font-family:"Archivo","IBM Plex Sans Thai",Helve
 body{font-variation-settings:"wdth" 100}
 h1,h2,h3,.detail-title,.work-link{font-variation-settings:"wdth" 82;font-weight:400}
 </style></head>
-<body><div class="ap-hd" role="banner"><a class="ap-brand" href="/">Ammily Prain</a><div class="ap-links" role="navigation" aria-label="Main navigation"><a href="/#info">About</a><a href="/index/">Index</a><a href="/playground/" aria-current="page">Playground</a></div><a class="ap-clock" href="mailto:ammilyprain@gmail.com" aria-label="Contact me (ammilyprain@gmail.com)"><span class="ck-a"><span class="bkk">Bangkok </span><b class="ap-clk">--:--</b></span><span class="ck-b">Contact me</span></a></div>
+<body data-hero-tone="light"><div class="ap-hd" role="banner"><a class="ap-brand" href="/">Ammily Prain</a><div class="ap-links" role="navigation" aria-label="Main navigation"><a href="/#info">About</a><a href="/index/">Index</a><a href="/playground/" aria-current="page">Playground</a></div><a class="ap-clock" href="mailto:ammilyprain@gmail.com" aria-label="Contact me (ammilyprain@gmail.com)"><span class="ck-a"><span class="bkk">Bangkok </span><b class="ap-clk">--:--</b></span><span class="ck-b">Contact me</span></a></div>
 <nav aria-label="Old navigation" aria-hidden="true" class="ap-old"><a tabindex="-1" href="/playground/" aria-current="page">home</a><a tabindex="-1" href="/index/">work</a><a tabindex="-1" href="#about">info</a><a tabindex="-1" href="#contact">contact</a></nav>
 <main class="page">
 <section class="hero" aria-label="Interactive packaging artwork">
@@ -94,4 +96,4 @@ shell.addEventListener('keydown',e=>{if(e.target.closest('.surface')&&!e.target.
 view();
 function resize(){const width=document.querySelector('.page').clientWidth;document.documentElement.style.setProperty('--scale',String(width/1440));document.documentElement.style.setProperty('--mobile-scale',String(width/960))}new ResizeObserver(resize).observe(document.querySelector('.page'));resize();
 })();
-</script><script>{const f=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Bangkok',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});const t=()=>{const [h,m,s]=f.format(new Date()).split(':');document.querySelectorAll('.ap-clk').forEach(c=>c.innerHTML=h+'<i style="font-style:normal;opacity:'+(+s%2?.25:1)+'">:</i>'+m)};t();setInterval(t,1000)}</script></body></html>
+</script><script>{const f=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Bangkok',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});const t=()=>{const [h,m,s]=f.format(new Date()).split(':');document.querySelectorAll('.ap-clk').forEach(c=>c.innerHTML=h+'<i style="font-style:normal;opacity:'+(+s%2?.25:1)+'">:</i>'+m)};t();setInterval(t,1000)}</script><script>{const hd=document.querySelector('.ap-hd'),tone=document.body.dataset.heroTone||'light';const upd=()=>{const solid=scrollY>Math.max(120,innerHeight*.7);hd.classList.toggle('solid',solid);hd.classList.toggle('on-dark',!solid&&tone==='dark')};addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd()}</script></body></html>
