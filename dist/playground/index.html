@@ -6,8 +6,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:white;color:#525051;font-family:Arial,sans-serif}a{color:inherit;text-decoration:none}button,input{font:inherit}button,a,input{touch-action:manipulation}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid #333;outline-offset:5px}nav{height:90px;display:flex;justify-content:space-evenly;align-items:center;max-width:1000px;margin:auto;font:21px Georgia,serif}nav a:hover{text-decoration:underline;text-underline-offset:5px}nav [aria-current]{font-style:italic}.page{max-width:1440px;margin:auto}.hero{position:relative;width:100%;height:calc(760px * var(--scale,1));min-height:420px;overflow:hidden}.stage-shell{position:absolute;inset:0;overflow:hidden;touch-action:pan-y;cursor:grab}.stage-shell.turning{cursor:grabbing}.stage{position:absolute;left:50%;top:max(0px,calc((100% - 760px * var(--scale,1)) / 2));width:1440px;height:760px;transform-origin:top center;transform:translateX(-50%) scale(var(--scale,1));perspective:1800px}.assembly,.hinge{position:absolute;transform-style:preserve-3d}.assembly{left:600px;top:228px;width:239px;height:303px;transform-origin:var(--origin,302px) 151px}.assembly.settle{transition:transform 700ms cubic-bezier(.22,1,.36,1)}.hinge{--rx:0deg;--ry:0deg;transform-origin:var(--ox) var(--oy);transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform 800ms cubic-bezier(.22,1,.36,1)}.dragging .hinge{transition:none}.surface{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;border-radius:0;background:transparent;overflow:hidden;cursor:grab;touch-action:none;backface-visibility:visible;transform:translateZ(.15px)}.surface:active{cursor:grabbing}.surface .print{position:absolute;display:block;width:843px;height:826px;max-width:none;pointer-events:none;user-select:none}.surface:focus-visible{outline:2px dashed #595959;outline-offset:-4px}.controls{position:relative;z-index:3;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;max-width:1440px;margin:0 auto;padding:18px 20px 0;font:11px/16px "Archivo",Arial,sans-serif;letter-spacing:.45px;color:#6b6969}.controls .hint{justify-self:start}.range{display:flex;align-items:center;gap:14px}.range output{font-variant-numeric:tabular-nums;color:#9a9898;margin-left:4px}.range input{-webkit-appearance:none;appearance:none;width:220px;height:16px;background:transparent;cursor:ew-resize;margin:0}.range input::-webkit-slider-runnable-track{height:1px;background:#bdbdbd}.range input::-moz-range-track{height:1px;background:#bdbdbd}.range input::-webkit-slider-thumb{-webkit-appearance:none;width:9px;height:9px;border-radius:50%;background:#525051;margin-top:-4px;border:0}.range input::-moz-range-thumb{width:9px;height:9px;border-radius:50%;background:#525051;border:0}#toggle{justify-self:end;background:none;border:0;padding:6px 0;color:#525051;letter-spacing:.45px;border-bottom:1px solid #bdbdbd}#toggle:hover{border-color:#525051}.collage{position:relative;width:100%;aspect-ratio:1440/1513;margin-top:72px;pointer-events:none}.collage .decoration{position:absolute;inset:0;width:100%;height:100%;object-fit:fill}.collage .about{position:absolute;left:2.41956%;top:4.23001%;width:55.86015%;height:58.88962%;object-fit:fill}.collage p{position:absolute;margin:0;font-family:'Averia Serif Libre',Georgia,serif;font-style:italic;line-height:normal}.collage .graphic{left:72.29167%;top:57.63384%;font-size:clamp(25px,6.94444vw,100px)}.collage .tag{left:86.11111%;color:#ebeaea;font-size:clamp(7px,1.38889vw,20px);letter-spacing:-.07em}.collage .ux{top:14.80502%}.collage .visual{top:23.19894%}.collage .branding{top:40.11897%}.collage .year{left:2.84722%;top:48.51289%;font-size:clamp(5px,1.11111vw,16px);color:#9f9f9f;font-style:normal;font-weight:700}.work-link{position:relative;display:block;width:max-content;margin:140px auto 180px;font:italic clamp(24px,4vw,50px) 'Averia Serif Libre',Georgia,serif;border-bottom:1px solid #aaa;padding-bottom:7px}.work-link:hover{color:#111}footer{width:90%;margin:0 auto 70px}.signature{display:flex;justify-content:space-between;align-items:end;border-bottom:1px solid #555;padding-bottom:25px}.signature img{width:35%;height:auto}.signature img:last-child{width:24%}.footer-line{display:flex;justify-content:space-between;gap:20px;font-size:12px;margin-top:30px}.footer-line a:hover{text-decoration:underline}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-.paper{max-width:1440px;margin:120px auto 0}.paper canvas{display:block;width:100%;height:clamp(380px,48vw,640px);cursor:grab;touch-action:pan-y;outline:0}.paper canvas.turning{cursor:grabbing}.paper canvas:focus-visible{outline:1px dashed #9a9898;outline-offset:-8px}.paper-step{margin:8px 0 0;text-align:center;font:11px/16px "Archivo",Arial,sans-serif;letter-spacing:.45px;color:#6b6969;min-height:16px;white-space:pre}.paper-tabs{display:flex;gap:22px;justify-self:start}.paper-tabs button,#paper-play{background:none;border:0;padding:6px 0;color:#9a9898;letter-spacing:.45px;border-bottom:1px solid transparent}.paper-tabs button[aria-selected=true]{color:#525051;border-color:#525051}.paper-tabs button:hover{color:#525051}#paper-play{justify-self:end;color:#525051;border-color:#bdbdbd}#paper-play:hover{border-color:#525051}
-@media(max-width:600px){.paper{margin-top:70px}.paper-tabs{grid-column:1/-1}.paper-step{white-space:normal;padding:0 16px}}
 @media(max-width:900px){.work-link{margin:90px auto 110px}}
 @media(max-width:600px){nav{height:74px;font-size:17px}.hero{height:calc(760px * var(--mobile-scale,1))}.stage{width:960px;transform:translateX(-50%) scale(var(--mobile-scale,1))}.stage .assembly{left:360px}.controls{grid-template-columns:1fr auto;gap:12px 16px;padding:14px 16px 0}.controls .hint{grid-column:1/-1}.range input{width:min(150px,38vw)}.collage{margin-top:40px}.work-link{margin:55px auto 80px}.footer-line{font-size:10px;flex-direction:column;gap:12px}footer{margin-bottom:40px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.assembly,.assembly.settle,.hinge{transition:none}}
@@ -37,122 +35,6 @@
 <div class="stage-shell" id="shell"><div class="stage"><div class="assembly" id="box"></div></div></div>
 </section>
 <div class="controls"><span class="hint">Portfolio box. Drag around it to turn, pull a flap to fold.</span><label class="range"><span>Flat</span><input id="fold" type="range" min="0" max="100" value="0" aria-label="Fold the whole box"><span>Folded <output id="percentage">0%</output></span></label><button id="toggle" type="button">Fold</button><div class="status sr-only" role="status" aria-live="polite"></div></div>
-<section class="paper" id="paper-fold" aria-label="Paper folding: heart and crane">
-<canvas id="paper-canvas" tabindex="0" aria-label="Folded paper. Drag to turn it, or use the arrow keys."></canvas>
-<p class="paper-step" id="paper-step" aria-live="polite"></p>
-<div class="controls paper-bar"><div class="paper-tabs" role="tablist" aria-label="Choose a fold"><button type="button" role="tab" aria-selected="true" data-model="heart">Heart</button><button type="button" role="tab" aria-selected="false" data-model="crane">Crane</button></div><label class="range"><span>Square</span><input id="paper-range" type="range" min="0" max="1000" value="0" aria-label="Fold progress"><span>Folded</span></label><button id="paper-play" type="button">Fold</button></div>
-</section>
-<script>
-{
-const cv=document.getElementById('paper-canvas'),ctx=cv.getContext('2d'),range=document.getElementById('paper-range'),stepEl=document.getElementById('paper-step'),play=document.getElementById('paper-play');
-const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
-const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
-
-/* ---------- flat-fold engine (heart) ---------- */
-const cr=(d,p,q)=>d[0]*(q[1]-p[1])-d[1]*(q[0]-p[0]);
-function clip(poly,p,d,keep){const out=[];for(let i=0;i<poly.length;i++){const a=poly[i],b=poly[(i+1)%poly.length],ca=cr(d,p,a)*keep,cb=cr(d,p,b)*keep;if(ca>=0)out.push(a);if((ca>=0)!==(cb>=0)){const t=ca/(ca-cb);out.push([a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t])}}return out.length>=3?out:null}
-function reflect(q,p,d){const L=Math.hypot(d[0],d[1]),u=[d[0]/L,d[1]/L],r=[q[0]-p[0],q[1]-p[1]],a=r[0]*u[0]+r[1]*u[1];return[p[0]+2*a*u[0]-r[0],p[1]+2*a*u[1]-r[1]]}
-function split(faces,s){
-  if(s.flip)return{stay:[],move:faces};
-  let fs=faces;
-  if(s.only){fs=[];for(const f of faces){const a=clip(f.poly,s.only.p,s.only.d,1),b=clip(f.poly,s.only.p,s.only.d,-1);if(a)fs.push({poly:a,layer:f.layer,ok:1});if(b)fs.push({poly:b,layer:f.layer,ok:0})}}
-  const stay=[],move=[];
-  for(const f of fs){if(s.only&&!f.ok){stay.push(f);continue}const a=clip(f.poly,s.p,s.d,-1),b=clip(f.poly,s.p,s.d,1);if(a)stay.push({poly:a,layer:f.layer});if(b)move.push({poly:b,layer:f.layer})}
-  return{stay,move}}
-function after(sp,s,faces){
-  if(s.flip)return faces.map(f=>({poly:f.poly.map(q=>[-q[0],q[1]]).reverse(),layer:-f.layer}));
-  const ls=[...sp.stay,...sp.move].map(f=>f.layer),mx=Math.max(...ls),mn=Math.min(...ls),mm=sp.move.map(f=>f.layer),mmx=Math.max(...mm),mmn=Math.min(...mm);
-  return[...sp.stay,...sp.move.map(f=>({poly:f.poly.map(q=>reflect(q,s.p,s.d)),layer:s.dir>0?mx+1+(mmx-f.layer):mn-1-(f.layer-mmn)}))]}
-const heartSteps=[
- {p:[0,.5],d:[1,0],dir:1,say:'Fold the top edge down to the middle.'},
- {p:[0,-.25],d:[-1,0],dir:1,say:'Fold the bottom edge up to meet the top.'},
- {p:[0,-.25],d:[-1,-1],dir:1,say:'Fold the right side up along the centre.'},
- {p:[0,-.25],d:[-1,1],dir:1,say:'Same on the left.'},
- {flip:1,say:'Turn it over.'},
- {p:[.75,.55],d:[1,-1],dir:-1,say:'Tuck the outer corners behind.'},
- {p:[-.75,.55],d:[1,1],dir:-1,say:'Tuck the outer corners behind.'},
- {p:[0,.6],d:[1,1],dir:-1,only:{p:[0,0],d:[0,-1]},say:'Tuck the inner corners to make the dip.'},
- {p:[0,.6],d:[1,-1],dir:-1,only:{p:[0,0],d:[0,1]},say:'Tuck the inner corners to make the dip.'}
-];
-const hs=[[{poly:[[-1,-1],[1,-1],[1,1],[-1,1]],layer:0}]],hsp=[];
-heartSteps.forEach((s,i)=>{const sp=split(hs[i],s);hsp.push(sp);hs.push(after(sp,s,hs[i]))});
-const EPS=.006;
-function heartFaces(P){
-  const n=heartSteps.length;if(P>=n)return{faces:hs[n].map(f=>({pts:f.poly.map(q=>[q[0],q[1]-.25,f.layer*EPS])})),say:'A heart.',end:1};
-  const i=Math.floor(P),f=ease(P-i),s=heartSteps[i],sp=hsp[i],out=[];
-  const lift=(q,l)=>[q[0],q[1]-.25,l*EPS];
-  for(const g of sp.stay)out.push({pts:g.poly.map(q=>lift(q,g.layer))});
-  if(s.flip){const a=Math.PI*f,c=Math.cos(a),si=Math.sin(a);for(const g of sp.move)out.push({pts:g.poly.map(q=>{const v=lift(q,g.layer);return[v[0]*c+v[2]*si,v[1],-v[0]*si+v[2]*c]})})}
-  else{const L=Math.hypot(...s.d),u=[s.d[0]/L,s.d[1]/L,0],th=s.dir*Math.PI*f,c=Math.cos(th),si=Math.sin(th);
-    for(const g of sp.move)out.push({pts:g.poly.map(q=>{const v=[q[0]-s.p[0],q[1]-s.p[1],g.layer*EPS],dot=u[0]*v[0]+u[1]*v[1],cx=[u[1]*v[2],-u[0]*v[2],u[0]*v[1]-u[1]*v[0]];const r=[0,1,2].map(k=>v[k]*c+cx[k]*si+u[k]*dot*(1-c));return[r[0]+s.p[0],r[1]+s.p[1]-.25,r[2]]})})}
-  return{faces:out,say:`${i+1} / ${n}  ${s.say}`}}
-
-/* ---------- morph model (crane) ---------- */
-// Each named point has a position as a flat square, as a bird base, and as the finished crane.
-const K={
- WL:[[-1,1,0],[-.04,1.1,.03],[-.2,.85,1.05]], WR:[[1,1,0],[.04,1.1,-.03],[-.2,.85,-1.05]],
- Fa:[[0,1,0],[.3,.35,0],[.28,.32,0]], Ra:[[0,.1,0],[-.3,.35,0],[-.28,.32,0]],
- Nb:[[.6,.2,0],[.35,.2,0],[.36,.06,0]], Tb:[[-.6,.2,0],[-.35,.2,0],[-.36,.06,0]],
- Ls:[[-.45,.55,0],[0,.3,.05],[0,0,.2]], Rs:[[.45,.55,0],[0,.3,-.05],[0,0,-.2]],
- NkL:[[.15,-.15,0],[.08,0,.01],[.24,.22,.03]], NkR:[[.2,-.1,0],[.08,0,-.01],[.24,.22,-.03]],
- N:[[1,-1,0],[.18,-1,.02],[.95,.98,0]], H:[[.8,-1,0],[.15,-1.02,.02],[1.14,.84,0]], N2:[[1,-.8,0],[.2,-.9,.02],[.88,.88,0]],
- TkL:[[-.15,-.15,0],[-.08,0,.01],[-.24,.22,.03]], TkR:[[-.2,-.1,0],[-.08,0,-.01],[-.24,.22,-.03]],
- T:[[-1,-1,0],[-.18,-1,-.02],[-1.02,.88,0]]
-};
-const tris=[['Fa','Ra','WL'],['Ra','Fa','WR'],['Nb','Fa','Ls'],['Fa','Ra','Ls'],['Ra','Tb','Ls'],['Tb','Nb','Ls'],['Fa','Nb','Rs'],['Ra','Fa','Rs'],['Tb','Ra','Rs'],['Nb','Tb','Rs'],['Nb','NkL','N'],['NkR','Nb','N'],['N','H','N2'],['Tb','TkL','T'],['TkR','Tb','T']];
-const craneSay=['A square of paper.','Collapse it into a bird base.','Lift the neck and tail, open the wings.','A crane.'];
-function craneFaces(P){
-  const ph=Math.min(1,Math.floor(P)),f=ease(clamp(P-ph,0,1)),k=P>=2?2:ph;
-  const at=n=>{const a=K[n][ph],b=K[n][Math.min(2,ph+1)];return P>=2?K[n][2].slice():a.map((v,i)=>v+(b[i]-v)*f)};
-  const out=tris.map(t=>({pts:t.map(at)}));const dy=-.45*(P>=2?1:ph?f:0);out.forEach(o=>o.pts.forEach(q=>q[1]+=dy));
-  const sheet=clamp(1-P*2.2,0,1);
-  if(sheet>0)out.unshift({pts:[[-1,-1,.01],[1,-1,.01],[1,1,.01],[-1,1,.01]],alpha:sheet});
-  return{faces:out,say:P>=2?craneSay[3]:`${ph+1} / 2  ${craneSay[ph+1]}`,end:P>=2}}
-
-const models={
- heart:{steps:heartSteps.length,get:heartFaces,front:'#d65f5a',back:'#f4f1ec',view:[0,0],scale:1.05,grow:.4},
- crane:{steps:2,get:craneFaces,front:'#33507a',back:'#46658f',view:[-32,16],scale:1.05,grow:.25}
-};
-let model='heart',P=0,yaw=0,pitch=0,vy=0,vp=0,anim=null,glide=null;
-
-/* ---------- render ---------- */
-function size(){const r=cv.getBoundingClientRect(),d=Math.min(2,devicePixelRatio||1);cv.width=Math.round(r.width*d);cv.height=Math.round(r.height*d);ctx.setTransform(d,0,0,d,0,0);draw()}
-function draw(){
-  const m=models[model],W=cv.clientWidth,H=cv.clientHeight;ctx.clearRect(0,0,W,H);
-  const {faces,say}=m.get(P);stepEl.textContent=say;
-  const prog=P/m.steps,vY=(yaw+m.view[0]*prog)*Math.PI/180,vX=(pitch+m.view[1]*prog)*Math.PI/180;
-  const cy=Math.cos(vY),sy=Math.sin(vY),cx=Math.cos(vX),sx=Math.sin(vX);
-  const S=Math.min(W,H)*.36*m.scale*(1+m.grow*ease(prog)),D=5;
-  const tf=([x,y,z])=>{const x1=x*cy+z*sy,z1=-x*sy+z*cy;const y2=y*cx-z1*sx,z2=y*sx+z1*cx;return[x1,y2,z2]};
-  const list=faces.map(f=>{const v=f.pts.map(tf);const a=v[0],b=v[1],c=v[2];const u=[b[0]-a[0],b[1]-a[1],b[2]-a[2]],w=[c[0]-a[0],c[1]-a[1],c[2]-a[2]];let n=[u[1]*w[2]-u[2]*w[1],u[2]*w[0]-u[0]*w[2],u[0]*w[1]-u[1]*w[0]];const nl=Math.hypot(...n)||1;n=n.map(q=>q/nl);const depth=v.reduce((s,q)=>s+q[2],0)/v.length;return{v,n,depth,alpha:f.alpha??1}});
-  list.sort((a,b)=>a.depth-b.depth);
-  for(const f of list){
-    const facing=f.n[2]>0,base=facing?m.back:m.front;
-    const light=.8+.2*Math.abs(f.n[0]*-.4+f.n[1]*.55+f.n[2]*.73);
-    ctx.globalAlpha=f.alpha;ctx.beginPath();
-    f.v.forEach(([x,y,z],i)=>{const k=D/(D-z),px=W/2+x*S*k,py=H/2-y*S*k;i?ctx.lineTo(px,py):ctx.moveTo(px,py)});
-    ctx.closePath();ctx.fillStyle=shade(base,light);ctx.fill();ctx.lineWidth=.6;ctx.strokeStyle='rgba(60,55,55,.18)';ctx.stroke()}
-  ctx.globalAlpha=1;
-  range.value=Math.round(P/m.steps*1000);play.textContent=P>=m.steps?'Unfold':'Fold'}
-function shade(hex,k){const n=parseInt(hex.slice(1),16);return`rgb(${[(n>>16)&255,(n>>8)&255,n&255].map(c=>Math.round(clamp(c*k,0,255))).join(',')})`}
-
-/* ---------- controls ---------- */
-function go(target){cancelAnimationFrame(anim);const m=models[model],from=P,dur=reduce?0:Math.abs(target-from)*900,t0=performance.now();
-  const tick=now=>{const t=dur?clamp((now-t0)/dur,0,1):1;P=from+(target-from)*t;draw();if(t<1)anim=requestAnimationFrame(tick)};anim=requestAnimationFrame(tick)}
-play.onclick=()=>{const m=models[model];go(P>=m.steps?0:m.steps)};
-range.addEventListener('input',()=>{cancelAnimationFrame(anim);P=range.value/1000*models[model].steps;draw()});
-document.querySelectorAll('.paper-tabs button').forEach(b=>b.onclick=()=>{cancelAnimationFrame(anim);model=b.dataset.model;P=0;yaw=0;pitch=0;document.querySelectorAll('.paper-tabs button').forEach(x=>x.setAttribute('aria-selected',String(x===b)));draw()});
-let drag=null;
-cv.addEventListener('pointerdown',e=>{if(e.button!==0)return;cancelAnimationFrame(glide);drag={id:e.pointerId,x:e.clientX,y:e.clientY,t:performance.now()};vy=vp=0;cv.setPointerCapture(e.pointerId);cv.classList.add('turning')});
-cv.addEventListener('pointermove',e=>{if(!drag||e.pointerId!==drag.id)return;const dx=e.clientX-drag.x,dy=e.clientY-drag.y,now=performance.now(),dt=Math.max(16,now-drag.t);yaw+=dx*.5;pitch=clamp(pitch+dy*.4,-80,80);vy=dx*.5/dt*16;vp=dy*.4/dt*16;drag.x=e.clientX;drag.y=e.clientY;drag.t=now;draw()});
-const end=e=>{if(!drag||e.pointerId!==drag.id)return;drag=null;cv.classList.remove('turning');if(reduce)return;const g=()=>{vy*=.94;vp*=.94;yaw+=vy;pitch=clamp(pitch+vp,-80,80);draw();if(Math.abs(vy)+Math.abs(vp)>.05)glide=requestAnimationFrame(g)};glide=requestAnimationFrame(g)};
-cv.addEventListener('pointerup',end);cv.addEventListener('pointercancel',end);
-cv.addEventListener('keydown',e=>{const k={ArrowLeft:[-15,0],ArrowRight:[15,0],ArrowUp:[0,-10],ArrowDown:[0,10]}[e.key];if(!k)return;e.preventDefault();yaw+=k[0];pitch=clamp(pitch+k[1],-80,80);draw()});
-new ResizeObserver(size).observe(cv);size();
-}
-</script>
-
 <section class="collage" id="about" aria-label="About Ammily Prain"><img class="decoration" src="/assets/home/lower-decoration.png" alt="" width="2160" height="2270"><img class="about" src="/assets/home/about-collage.png" alt="Ammily Prain, graphic designer and explorer, constantly seeking the new and the undefined. Studies, awards and work." width="1609" height="1782"><p class="graphic">graphic</p><p class="year">2026</p><p class="sr-only">The artwork preserves the text in the original Figma design.</p></section>
 <a class="work-link" href="/index/">Explore selected work ↗</a>
 </main>
