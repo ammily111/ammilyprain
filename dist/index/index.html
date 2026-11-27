@@ -32,13 +32,13 @@ nav{animation:index-enter 1.05s cubic-bezier(.22,1,.36,1) both}
 .nakhon-cover .motif-12{animation:nakhon-cover-12 2s linear infinite}@keyframes nakhon-cover-12{0%{opacity:0;animation-timing-function:step-end}82.5%,100%{opacity:1}}
 @media(prefers-reduced-motion:reduce){.art.nakhon-cover .nakhon-motif{animation:none!important;opacity:1!important}}
 
-/* Index grid: four works per row (two on phones). */
-.grid{grid-template-columns:repeat(4,minmax(0,1fr));column-gap:24px;row-gap:64px}
+/* Index grid: three works per row (two on phones). */
+.grid{grid-template-columns:repeat(3,minmax(0,1fr));column-gap:30px;row-gap:80px}
 .project.wide,.project.offset{grid-column:auto}
 .project .art,.project.wide .art,.project.flower .art{aspect-ratio:605/829}
-.art{border-radius:14px}
-.caption{font-size:12px;min-height:34px}
-@media(max-width:900px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:48px 18px}}
+.art{border-radius:18px}
+.caption{font-size:13px;min-height:34px}
+@media(max-width:900px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:56px 18px}}
 @media(max-width:600px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 12px}.project.wide .art{aspect-ratio:605/829}.art{border-radius:10px}.caption{font-size:10px}}
 </style><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..700&display=swap"><style id="ap-header-css">
 .ap-hd{position:fixed;inset:0 0 auto;height:48px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 20px;z-index:1000;mix-blend-mode:difference;color:#fff;font-family:"Archivo",Helvetica,Arial,sans-serif;font-variation-settings:"wdth" 100;font-size:11px;line-height:16px;letter-spacing:.45px;font-style:normal;pointer-events:none}
