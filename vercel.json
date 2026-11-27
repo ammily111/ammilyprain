@@ -3,5 +3,17 @@
   "framework": null,
   "buildCommand": "node scripts/build.mjs",
   "installCommand": "",
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "redirects": [
+    {
+      "source": "/home",
+      "destination": "/playground/",
+      "permanent": true
+    },
+    {
+      "source": "/home/",
+      "destination": "/playground/",
+      "permanent": true
+    }
+  ]
 }

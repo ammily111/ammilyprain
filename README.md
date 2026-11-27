@@ -6,7 +6,10 @@ Live site: https://www.ammilyprain.com
 
 ## Files
 
-- `dist/index.html`: Work Index, category filters, newest-first ordering and formatted captions.
+- `dist/index.html`: Animated home page (showreel card, word-by-word intro, expanding project plate, stamp footer).
+- `dist/index/index.html`: Work Index (linked as "Index"), category filters, newest-first ordering and formatted captions.
+- `dist/playground/index.html`: The former Home page (fold-the-box portfolio), linked as "Playground". `/home/` redirects here.
+- All pages share an 11px fixed header: Ammily Prain · Index · About · Playground · Bangkok time (hover: Contact me).
 - `dist/work/silpacheep/index.html`: Silpacheep project page.
 - `dist/work/nowhere-now-here/index.html`: NO–WHERE, NOW–HERE concert project, from Figma frame `2023:7033`, with responsive white margins, scroll reveals, and the 16-second rotating moon from Figma. Its GT Ultra Median WOFF2 files are converted from the supplied `GT_Ultra.zip`; Light, Bold and Regular Italic are preloaded.
 - `dist/work/nakhon-phanom/index.html`: Feel…Nakhon Phanom project page, linked from its Work Index cover.

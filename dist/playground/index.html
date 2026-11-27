@@ -10,18 +10,35 @@
 @media(max-width:600px){nav{height:74px;font-size:17px}.hero{height:770px}.controls{top:30px;left:6%;width:88%}.controls h1{font-size:31px;margin-bottom:8px}.controls p{max-width:100%;margin-bottom:12px}.controls label,.controls input{max-width:280px}.controls label{margin-top:8px}.actions{margin:10px 0}.rotation{position:absolute;right:0;top:115px;flex-direction:column;gap:4px}.controls .tip{max-width:260px}.status{margin-top:10px}.stage{top:340px;width:960px;transform:translateX(-50%) scale(var(--mobile-scale,1));transform-origin:top center}.stage .assembly{left:245px;top:270px}.stage .guide.vertical{left:180px}.stage .guide.horizontal{top:270px}.collage{margin-top:0}.work-link{margin:55px auto 80px}.footer-line{font-size:10px;flex-direction:column;gap:12px}footer{margin-bottom:40px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.assembly,.hinge{transition:none}}
 </style>
-</head>
-<body>
-<nav aria-label="Main navigation"><a href="/home/" aria-current="page">home</a><a href="/">work</a><a href="#about">info</a><a href="#contact">contact</a></nav>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..700&display=swap"><style id="ap-header-css">
+.ap-hd{position:fixed;inset:0 0 auto;height:48px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 20px;z-index:1000;mix-blend-mode:difference;color:#fff;font-family:"Archivo",Helvetica,Arial,sans-serif;font-variation-settings:"wdth" 100;font-size:11px;line-height:16px;letter-spacing:.45px;font-style:normal;pointer-events:none}
+.ap-hd a{color:#fff!important;text-decoration:none!important;pointer-events:auto;font:inherit;letter-spacing:inherit}
+.ap-hd .ap-brand{font-weight:500;letter-spacing:.1px}
+.ap-hd .ap-links{display:flex;gap:44px}
+.ap-hd .ap-links a{opacity:.55;transition:opacity .3s}
+.ap-hd .ap-links a:hover,.ap-hd .ap-links a[aria-current]{opacity:1}
+.ap-hd .ap-clock{justify-self:end;display:grid;text-align:right}
+.ap-hd .ap-clock>span{grid-area:1/1;transition:opacity .35s,transform .35s}
+.ap-hd .ap-clock b{font-weight:400;font-variant-numeric:tabular-nums}
+.ap-hd .ap-clock .ck-b{opacity:0;transform:translateY(6px)}
+.ap-hd .ap-clock:hover .ck-a,.ap-hd .ap-clock:focus-visible .ck-a{opacity:0;transform:translateY(-6px)}
+.ap-hd .ap-clock:hover .ck-b,.ap-hd .ap-clock:focus-visible .ck-b{opacity:1;transform:none}
+.ap-hd a:focus-visible{outline:1px solid #fff;outline-offset:4px}
+.ap-old{visibility:hidden}
+@media(max-width:700px){.ap-hd{padding:0 12px;grid-template-columns:auto 1fr auto;gap:10px}.ap-hd .ap-links{gap:12px;justify-content:center}}
+@media(max-width:420px){.ap-hd .bkk{display:none}}
+</style></head>
+<body><div class="ap-hd" role="banner"><a class="ap-brand" href="/">Ammily Prain</a><div class="ap-links" role="navigation" aria-label="Main navigation"><a href="/index/">Index</a><a href="/#info">About</a><a href="/playground/" aria-current="page">Playground</a></div><a class="ap-clock" href="mailto:ammilyprain@gmail.com" aria-label="Contact me (ammilyprain@gmail.com)"><span class="ck-a"><span class="bkk">Bangkok </span><b class="ap-clk">--:--</b></span><span class="ck-b">Contact me</span></a></div>
+<nav aria-label="Old navigation" aria-hidden="true" class="ap-old"><a tabindex="-1" href="/playground/" aria-current="page">home</a><a tabindex="-1" href="/index/">work</a><a tabindex="-1" href="#about">info</a><a tabindex="-1" href="#contact">contact</a></nav>
 <main class="page">
 <section class="hero" aria-label="Interactive packaging artwork">
 <div class="stage-shell"><div class="stage"><div class="guide horizontal"></div><div class="guide vertical"></div><div class="assembly" id="box"></div></div></div>
 <div class="controls"><h1>A little<br>unfolding.</h1><p>My portfolio, in a different shape.<br>Drag a panel to fold it along its crease.</p><label for="fold">FLAT → FOLDED <output id="percentage">0%</output></label><input id="fold" type="range" min="0" max="100" value="0" aria-label="Fold the whole box"><div class="actions"><button id="fold-all" type="button">Fold box ↗</button><button id="reset" type="button">Unfold ↺</button></div><p class="tip">Click a panel to fold or open it.<br>Keyboard: focus a panel, then use ↑ / ↓.</p><div class="rotation" aria-label="Rotate view"><button id="view-left" aria-label="Rotate view left">↶ View</button><button id="view-right" aria-label="Rotate view right">View ↷</button></div><div class="status" role="status" aria-live="polite">Try a flap, or fold the whole box.</div></div>
 </section>
 <section class="collage" id="about" aria-label="About Ammily Prain"><img class="decoration" src="/assets/home/lower-decoration.png" alt="" width="2160" height="2270"><img class="about" src="/assets/home/about-collage.png" alt="Ammily Prain, graphic designer and explorer, constantly seeking the new and the undefined. Studies, awards and work." width="1609" height="1782"><p class="graphic">graphic</p><p class="year">2026</p><p class="sr-only">The artwork preserves the text in the original Figma design.</p></section>
-<a class="work-link" href="/">Explore selected work ↗</a>
+<a class="work-link" href="/index/">Explore selected work ↗</a>
 </main>
-<footer id="contact"><div class="signature"><img src="/assets/297-4313.png" alt="ammily"><img src="/assets/297-4320.png" alt="prain"></div><div class="footer-line"><span>Ammily Prain Portfolio · 2026</span><a href="/">Project Index ↗</a><a href="mailto:ammilyprain@gmail.com">ammilyprain@gmail.com ↗</a></div></footer>
+<footer id="contact"><div class="signature"><img src="/assets/297-4313.png" alt="ammily"><img src="/assets/297-4320.png" alt="prain"></div><div class="footer-line"><span>Ammily Prain Portfolio · 2026</span><a href="/index/">Project Index ↗</a><a href="mailto:ammilyprain@gmail.com">ammilyprain@gmail.com ↗</a></div></footer>
 <script>
 (()=>{
 const box=document.getElementById('box'),slider=document.getElementById('fold'),percentage=document.getElementById('percentage'),status=document.querySelector('.status');
@@ -62,4 +79,4 @@ function fold(value){const t=Number(value)/100;for(const p of parts.values()){if
 slider.addEventListener('input',()=>fold(slider.value));document.getElementById('fold-all').onclick=()=>fold(100);document.getElementById('reset').onclick=()=>{yaw=0;fold(0)};document.getElementById('view-left').onclick=()=>{yaw-=30;view()};document.getElementById('view-right').onclick=()=>{yaw+=30;view()};
 function resize(){const width=document.querySelector('.hero').clientWidth;document.documentElement.style.setProperty('--scale',String(width/1440));document.documentElement.style.setProperty('--mobile-scale',String(width/960))}new ResizeObserver(resize).observe(document.querySelector('.hero'));resize();
 })();
-</script></body></html>
+</script><script>{const f=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Bangkok',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});const t=()=>{const [h,m,s]=f.format(new Date()).split(':');document.querySelectorAll('.ap-clk').forEach(c=>c.innerHTML=h+'<i style="font-style:normal;opacity:'+(+s%2?.25:1)+'">:</i>'+m)};t();setInterval(t,1000)}</script></body></html>

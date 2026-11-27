@@ -44,16 +44,33 @@
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   </style>
-</head>
-<body id="top">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..700&display=swap"><style id="ap-header-css">
+.ap-hd{position:fixed;inset:0 0 auto;height:48px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 20px;z-index:1000;mix-blend-mode:difference;color:#fff;font-family:"Archivo",Helvetica,Arial,sans-serif;font-variation-settings:"wdth" 100;font-size:11px;line-height:16px;letter-spacing:.45px;font-style:normal;pointer-events:none}
+.ap-hd a{color:#fff!important;text-decoration:none!important;pointer-events:auto;font:inherit;letter-spacing:inherit}
+.ap-hd .ap-brand{font-weight:500;letter-spacing:.1px}
+.ap-hd .ap-links{display:flex;gap:44px}
+.ap-hd .ap-links a{opacity:.55;transition:opacity .3s}
+.ap-hd .ap-links a:hover,.ap-hd .ap-links a[aria-current]{opacity:1}
+.ap-hd .ap-clock{justify-self:end;display:grid;text-align:right}
+.ap-hd .ap-clock>span{grid-area:1/1;transition:opacity .35s,transform .35s}
+.ap-hd .ap-clock b{font-weight:400;font-variant-numeric:tabular-nums}
+.ap-hd .ap-clock .ck-b{opacity:0;transform:translateY(6px)}
+.ap-hd .ap-clock:hover .ck-a,.ap-hd .ap-clock:focus-visible .ck-a{opacity:0;transform:translateY(-6px)}
+.ap-hd .ap-clock:hover .ck-b,.ap-hd .ap-clock:focus-visible .ck-b{opacity:1;transform:none}
+.ap-hd a:focus-visible{outline:1px solid #fff;outline-offset:4px}
+.ap-old{visibility:hidden}
+@media(max-width:700px){.ap-hd{padding:0 12px;grid-template-columns:auto 1fr auto;gap:10px}.ap-hd .ap-links{gap:12px;justify-content:center}}
+@media(max-width:420px){.ap-hd .bkk{display:none}}
+</style></head>
+<body id="top"><div class="ap-hd" role="banner"><a class="ap-brand" href="/">Ammily Prain</a><div class="ap-links" role="navigation" aria-label="Main navigation"><a href="/index/" aria-current="page">Index</a><a href="/#info">About</a><a href="/playground/">Playground</a></div><a class="ap-clock" href="mailto:ammilyprain@gmail.com" aria-label="Contact me (ammilyprain@gmail.com)"><span class="ck-a"><span class="bkk">Bangkok </span><b class="ap-clk">--:--</b></span><span class="ck-b">Contact me</span></a></div>
   <a class="skip-link" href="#project">Skip to project</a>
-  <nav aria-label="Main navigation">
-    <a href="/home/">home</a>
-    <a href="/#work">work</a>
-    <a href="/#info">info</a>
-    <a href="/#contact">contact</a>
+  <nav aria-label="Old navigation" aria-hidden="true" class="ap-old">
+    <a tabindex="-1" href="/playground/">home</a>
+    <a tabindex="-1" href="/index/#work">work</a>
+    <a tabindex="-1" href="/#info">info</a>
+    <a tabindex="-1" href="/index/#contact">contact</a>
   </nav>
-  <a class="index-link" href="/#work">← Project Index</a>
+  <a class="index-link" href="/index/#work">← Project Index</a>
   <main id="project">
     <div class="sr-only">
       <h1>Feel…Nakhon Phanom — A City Branding Campaign</h1>
@@ -79,7 +96,7 @@
     </figure>
   </main>
   <footer class="back">
-    <a href="/#work">← Back to all work</a>
+    <a href="/index/#work">← Back to all work</a>
     <a href="/assets/nakhon-phanom/project.svg" target="_blank" rel="noopener">View artwork at full size ↗</a>
     <a href="mailto:ammilyprain@gmail.com">Get in touch ↗</a>
     <button type="button" id="back-to-top">Back to top ↑</button>
@@ -151,5 +168,5 @@
       });
     })();
   </script>
-</body>
+<script>{const f=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Bangkok',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});const t=()=>{const [h,m,s]=f.format(new Date()).split(':');document.querySelectorAll('.ap-clk').forEach(c=>c.innerHTML=h+'<i style="font-style:normal;opacity:'+(+s%2?.25:1)+'">:</i>'+m)};t();setInterval(t,1000)}</script></body>
 </html>
