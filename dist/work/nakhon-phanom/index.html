@@ -69,9 +69,13 @@ body,body *:not(svg):not(svg *){font-family:"Archivo","IBM Plex Sans Thai",Helve
 body{font-variation-settings:"wdth" 100}
 h1,h2,h3,.detail-title,.work-link{font-variation-settings:"wdth" 82;font-weight:400}
 </style><style id="nk-fullbleed">
-/* Full-bleed artwork: the white of the artwork runs edge to edge and under the fixed header. */
+/* Artwork keeps its reading size; its own edge colours run out to both sides of the screen. */
 .ap-old{display:none!important}
-.project-artwork{width:100%!important;max-width:none!important;margin:0!important}
+body{overflow-x:clip}
+.project-artwork{position:relative;container-type:inline-size}
+.project-artwork::before,.project-artwork::after{content:'';position:absolute;top:0;height:calc(100cqw * 19764 / 1595);width:calc(50vw - 50cqw + 2px);z-index:-1}
+.project-artwork::before{right:calc(100% - 1px);background:linear-gradient(to bottom,#009d8a 0.000% 5.347%,#faf7f0 5.347% 22.538%,#ffffff 22.538% 40.698%,#110f1e 40.698% 45.702%,#ffffff 45.702% 48.688%,#009e8c 48.688% 54.701%,#5b2518 54.701% 56.638%,#542419 56.638% 56.881%,#532419 56.881% 57.123%,#522419 57.123% 62.046%,#40221c 62.046% 62.288%,#3f221c 62.288% 62.611%,#3e221c 62.611% 64.467%,#37211d 64.467% 67.776%,#2b201f 67.776% 68.019%,#2a201f 68.019% 69.713%,#241f20 69.713% 69.996%,#ffffff 69.996% 75.343%,#89cda5 75.343% 77.502%,#087069 77.502% 77.764%,#89cda5 77.764% 78.995%,#087069 78.995% 79.358%,#89cda5 79.358% 80.004%,#009d8a 80.004% 100.000%)}
+.project-artwork::after{left:calc(100% - 1px);background:linear-gradient(to bottom,#009d8a 0.000% 5.347%,#fbf9f4 5.347% 22.034%,#faf7f0 22.034% 22.397%,#ffffff 22.397% 40.698%,#110f1e 40.698% 45.702%,#ffffff 45.702% 48.688%,#009e8c 48.688% 53.249%,#612618 53.249% 53.471%,#602618 53.471% 53.713%,#5f2618 53.713% 55.730%,#582519 55.730% 58.959%,#4c241b 58.959% 59.201%,#4b241b 59.201% 60.896%,#45231c 60.896% 61.138%,#44231c 61.138% 61.380%,#43231c 61.380% 64.387%,#38221e 64.387% 66.324%,#31211f 66.324% 66.546%,#30211f 66.546% 66.868%,#2f211f 66.868% 69.996%,#ffffff 69.996% 75.404%,#cdbad3 75.404% 77.482%,#a966a9 77.482% 79.237%,#cdbad3 79.237% 79.661%,#b177b2 79.661% 80.004%,#019d8a 80.004% 100.000%)}
 </style></head>
 <body id="top" data-hero-tone="dark"><div class="ap-hd" role="banner"><a class="ap-brand" href="/">Ammily Prain</a><div class="ap-links" role="navigation" aria-label="Main navigation"><a href="/#info">About</a><a href="/index/" aria-current="page">Index</a><a href="/playground/">Playground</a></div><a class="ap-clock" href="mailto:ammilyprain@gmail.com" aria-label="Contact me (ammilyprain@gmail.com)"><span class="ck-a"><span class="bkk">Bangkok </span><b class="ap-clk">--:--</b></span><span class="ck-b">Contact me</span></a></div>
   <a class="skip-link" href="#project">Skip to project</a>
